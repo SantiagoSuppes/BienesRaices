@@ -1,6 +1,6 @@
-import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer';
 
-const emailRegistro = aync (datos) => {
+const emailRegistro = async (datos) => {
     var transport = nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
         port: process.env.EMAIL_PORT,
