@@ -7,7 +7,7 @@ import db from './config/db.js'
 const app = express();
 
 // Conexion a BD
-try{
+try {
     await db.authenticate();
     db.sync()
     console.log('Conexion exitosa a la base de datos')
@@ -20,7 +20,7 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 
 // Habilitar lectura de formularios
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 // Carpeta publica
 app.use(express.static('public'));
@@ -34,6 +34,6 @@ app.use('/auth', usuariosRoutes);
 
 // Definir un puerto y arrancar el proyecto
 const port = 3000;
-app.listen(port, ()=> {
+app.listen(port, () => {
     console.log(`El servidor esta funcionando en el puerto ${port}`)
 });
